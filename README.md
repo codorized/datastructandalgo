@@ -5,7 +5,7 @@
 Pointers are variables that store addresses and of course have their own addresses as well. 
 
 #Two types of operation in pointers
-1. Referencing -  getting the address of the pointed variable. This uses ```&``` <br>
+1. Referencing -  getting the address of the pointed variable. This uses ```&``` 
 #Implementation
 Declaration: 
 ``` int *a = &c; ```
