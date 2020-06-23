@@ -21,7 +21,7 @@ since ```a``` is an pointer, it contains the address itself. To get the value of
 
 # Pointer to a pointer?
 These are pointers which contain the address of the pointer it is pointing to. <br>
-**Declaration:**
+**Declaration:** <br>
 ``` int a = 10; ``` <br>
 ``` int *b; ``` <br>
 ``` int **c; ``` <br>	
