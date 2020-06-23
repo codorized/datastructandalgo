@@ -27,8 +27,6 @@ These are pointers which contain the address of the pointer it is pointing to. <
 ``` int **c; ``` <br>	
 ``` b = &a; ```<br>
 ``` c = &b; ``` <br>
-
-<br>
 ```printf("The value of a via pointer c is: %i", **c)```
 
 
