@@ -1,10 +1,10 @@
-###Data Structures and Algorithms
+### Data Structures and Algorithms
 
-##Topic 1: Pointers
-#Intro 
+## Topic 1: Pointers
+# Intro 
 Pointers are variables that store addresses and of course have their own addresses as well. 
 
-#Two types of operation in pointers
+# Two types of operation in pointers
 1. Referencing -  getting the address of the pointed variable. This uses ```&``` 
 #Implementation
 Declaration: 
@@ -20,7 +20,7 @@ NOTE: Datatypes of pointers depends on the datatype of the variable it is pointi
 Explanation: 
 since ```a``` is an pointer, it contains the address itself. To get the value of the variable of the one ```a``` is pointing to, u need to add ```*``` so it becomes ```*(a)``` or just simply ```*a```. 
 
-#Pointer to a pointer? 
+# Pointer to a pointer? 
 These are pointers which contain the address of the pointer it is pointing to. 
 Declaration: 
 ``` int a = 10; ``` <br>
