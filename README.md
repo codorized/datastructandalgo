@@ -5,15 +5,15 @@
 Pointers are variables that store addresses and of course have their own addresses as well. 
 
 # Two types of operation in pointers
-1. Referencing -  getting the address of the pointed variable. This uses ```&``` 
-#Implementation
-Declaration: 
-``` int *a = &c; ```
-Explanation:
-```a``` is an integer pointer which points to the address of integer variable ```c```  
-Visual:
-```a --> [x0005][c] ```
-NOTE: Datatypes of pointers depends on the datatype of the variable it is pointing to. 
+1. Referencing -  getting the address of the pointed variable. This uses ```&```  <br>
+*Implementation* <br>
+*Declaration:* <br> 
+``` int *a = &c; ``` <br>
+*Explanation:* <br>
+```a``` is an integer pointer which points to the address of integer variable ```c```  <br>
+*Visual:* <br>
+```a --> [x0005][c] ``` <br>
+NOTE: Datatypes of pointers depends on the datatype of the variable it is pointing to.  <br>
 
 2. Dereferencing - getting the value from the address that is pointed by the pointer. This uses ```*``` <br>
 ``` printf("%i", *a) ```
