@@ -24,7 +24,7 @@ These are pointers which contain the address of the pointer it is pointing to. <
 **Declaration:** <br>
 ``` int a = 10; ``` <br>
 ``` int *b; ``` <br>
-``` int **c; ``` <br>	
+``` int **c; ``` <br> 
 ``` b = &a; ```<br>
 ``` c = &b; ``` <br>
 ```printf("The value of a via pointer c is: %i", **c)```
@@ -48,10 +48,28 @@ Traverse, Insert, Delete
 # Array Implementation
 **Initialization:**
 ```
-int a[10];
-//Initialize all indices to -1(empty slot)
-for(int i=0; i<10; i++){
-  a[i] = -1;
+typedef struct listnode{
+    int size;
+  int *list_array;
+} LISTADT;
+
+LISTADT *InitList(int max_size)
+{
+    LISTADT *L; 
+    L = (LISTADT *)malloc(sizeof(LISTADT));
+    
+    if (L == NULL)
+    printf("error:No SPACE!");
+  else{
+      L->size = max_size;
+        L->list_array = (int *)malloc(sizeof(int)*max_size);
+        for(int i=0; i< max_size; i++)
+        {
+            L->list_array[i] = -1;
+        }
+  }
+  
+  return L;
 }
 ```
 **Operation: TRAVERSE** 
@@ -63,13 +81,20 @@ for(int i=0; i<10; i++){
 ```
 **Operation: INSERT** 
 ```
-for(int i=0; i<10; i++){
-  if(a[i] == -1)
-  {
-      a[i] = value;
-  }
+void insertItem(LISTADT *myList, int value)
+{
+    for(int i=0; i<myList->size; i++)
+    {
+        if(myList->list_array[i] == -1)
+        {
+            myList->list_array[i] = value;
+            return;
+        }
+    }
 }
 ```
+**Operation: DELETE** 
+```Exercise```
 # Linked-list Implementation
 **Initialization:**
 ```
@@ -99,11 +124,11 @@ void insertItem(LISTADT **head, int value)
   else 
   {
     while(tail->next != NULL)
-	{
-		tail = tail->next;
-	}
-	
-	tail->next = newNode;
+  {
+    tail = tail->next;
+  }
+  
+  tail->next = newNode;
 
   }
    
@@ -140,6 +165,8 @@ int main()
 }
 ```
 
+**Operation: DELETE** 
+```Exercise```
 
 
 
