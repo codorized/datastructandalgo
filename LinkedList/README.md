@@ -168,6 +168,126 @@ int main()
 **Operation: DELETE** 
 ```Exercise```
 
+# STACK ADT
+The Stack ADT. A Stack is a collection of objects inserted and removed according to the Last In First Out (LIFO) principle. In Stack ADT, there are two implementations: Array or Linked List Implementation. 
+# Array Implementation
+**Initialization:**
+```
+#include <stdio.h>
+#include <stdlib.h>
 
+typedef struct stacknode{
+    int size;
+    int TOS; 
+  int *list_array;
+} STACK;
 
+STACK *InitStack(int max_size)
+{
+    STACK *S; 
+    S = (STACK *)malloc(sizeof(STACK));
+    
+    if (S == NULL)
+    printf("error:No SPACE!");
+  else{
+      S->size = max_size;
+      S->TOS = 0;
+        S->list_array = (int *)malloc(sizeof(int)*max_size);
+        for(int i=0; i< max_size; i++)
+        {
+            S->list_array[i] = -1;
+        }
+  }
+  
+  return S;
+}
+```
+**Operation: PUSH** 
+```
+void push(STACK **myStack, int value)
+{
+    (*myStack)->list_array[(*myStack)->TOS] = value;
+    (*myStack)->TOS++;
+}
+```
+**Operation: POP** 
+```
+int pop(STACK **myStack)
+{
+    
+    if((*myStack)->TOS > 0)
+    {
+        int poppedItem;
+        poppedItem = (*myStack)->list_array[((*myStack)->TOS)-1];
+        (*myStack)->TOS--;
+        return poppedItem;
+    }
+    
+    printf("No Item to Pop!");
+    return -1;
+    
+}
+```
+
+# Linked List Implementation
+**Initialization:**
+#include <stdio.h>
+#include <stdlib.h>
+```
+typedef struct stacknode{
+    int value;
+    struct stacknode *next;
+} STACK;
+```
+**Operation: PUSH** 
+```
+void push(STACK **top, int value)
+{
+   
+  STACK *newNode = malloc(sizeof(STACK));
+  
+  newNode->value = value;
+  newNode->next = NULL;
+ 
+  if(*top == NULL) 
+  {
+    *top = newNode;
+    return;
+  }
+  else 
+  {
+    newNode->next = *top;
+    *top = newNode;
+  }
+   return;
+}
+
+**Operation: POP** 
+int pop(STACK **top)
+{
+    if(*top != NULL)
+    {
+        STACK *toDelete = *top;
+        int temp;
+        *top = (*top)->next;
+        toDelete->next = NULL;
+        temp = toDelete->value;
+        free(toDelete);
+        return temp;
+    }
+    else
+    {
+        printf("Stack is EMPTY!");
+        return -1;
+    }
+}
+```
+
+```Exercise```
+Create two related, linked-list implemented stacks S1 and S2 with the following operations: 
+1. push(Si,value): push element in stack Si where i can be 1 or 2;
+2. pop(Sj,Sk): Sj will be popped. The popped element will be pushed to Sk.
+
+```Assignment```
+Advanced Study: Queues
 
