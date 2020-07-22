@@ -432,5 +432,5 @@ Q *InitQ(int max_size)
 Create a circular Queue using a dynamic array.
 
   ```Assignment```
-Advanced Study: Sorting Algorithms
+Advance Study Sorting Algorithms
 
