@@ -420,9 +420,9 @@ Q *InitQ(int max_size)
   ```
 
   ```Exercise```
-  Create a linklist-implement Queue which only allows 3-char string to be enqueued. Each Q node is characterized by:
-  1. value
-  2. array of size 3
+  Create a linked list-implemented Queue which only allows 3-char string to be enqueued. Each Q node is characterized by:
+  2. string of size 3
+  3. pointer next
   
   Mods to operations: 
   Enqueue: enq(&myQ, "hey"); 
